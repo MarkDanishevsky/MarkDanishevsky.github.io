@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Tutorials: Iteration</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+
+<div class="header">
+  <h1>Mark Danishevsky</h1>
+  <h2>Tutorials: Iteration</h2>
+</div>
+
+<div class="navbar">
+    <a href="../index.html">Home</a>
+    <a href="../tutorials.html">Tutorials</a>
+    <a href="../about.html">About me</a>
+    <a href="../projects.html">Projects</a>
+
+    <a href="../files/Resume.pdf" class="right">Resume</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <a href="../tutorials.html">Back to tutorials home</a>
+
+    <h2>Boolean Expressions Navigation</h2>
+    <ul>
+        <li><a href="#iteration-intro">Iteration Intro</a></li>
+        <li><a href="#for-loop">For loop</a></li>
+        <li><a href="#enhanced-for-loop">Enhanced for loop</a></li>
+        <li><a href="#while-loop">While loop</a></li>
+        <li><a href="#do-while-loop">Do while loop</a></li>
+
+    </ul>
+  </div>
+  <div class="main">
+    <h2 id="for-loop">For loop</h2>
+    <h2 id="iteration-intro">What Is Iteration?</h2>
+    <p>Iteration means repeating a set of instructions multiple times. In Java, loops allow us to automate repetitive tasks instead of writing many segments of similar code over and over.</p>
+
+    <h3>Types of Loops in Java:</h3>
+    <ul>
+    <li><strong>for loop</strong> - use when you know how many times to repeat</li>
+    <li><strong>enhanced for loop (for-each)</strong> - great for looping through arrays/lists</li>
+    <li><strong>while loop</strong> - repeats while a condition is true (covered separately)</li>
+    <li><strong>do-while loop</strong> - runs at least once (covered separately)</li>
+    </ul>
+
+    <h2 id="for-loop">The for loop</h2>
+    <p>The syntax for a for loop is as follows:</p>
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/iteration_for_loop.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <ul>
+    <li><strong>Initialization:</strong> runs once at the start (e.g., int i = 0)</li>
+    <li><strong>Condition:</strong> checked before each repetition; loop continues while true</li>
+    <li><strong>Update:</strong> runs after each iteration</li>
+    </ul>
+
+    <p>Examples of updates:</p>
+    <ul>
+    <li><code>++</code> increases i by 1</li>
+    <li><code>--</code> decreases i by 1</li>
+    <li>Custom increment: <code>i = i + 3</code></li>
+    </ul>
+
+    <p>We can use a for loop to count from 1 to 5:</p>
+
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/iteration_for_loop_count.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <p>Traversing an array using a for loop:</p>
+
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/iteration_for_loop_array.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <h2 id="enhanced-for-loop">Enhanced for Loop (for-each)</h2>
+    <p>This is a simplified version of the for loop used to iterate over arrays. It is appreciated for its simpler and more elegant syntax.</p>
+
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/iteration_enhanced_for_loop_syntax.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <ul>
+    <li><strong>Variable:</strong> The iterative variable corresponding to a value of an element in the array</li>
+    <li><strong>Collection:</strong> The array of elements being iterated over</li>
+    </ul>
+
+    <p>Note: In for-each loops, the variable corresponds to a value, not an index.</p>
+
+    <p>Example of a for-each loop:</p>
+
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/iteration_enhanced_for_loop_arrays.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <p>The loop automatically:</p>
+    <ul>
+    <li>Starts at the beginning</li>
+    <li>Grabs each element in the array</li>
+    <li>Assigns it to the variable</li>
+    <li>Repeats until the end of the array</li>
+    </ul>
+
+    <p>Use for-each loops when:</p>
+    <ul>
+    <li>You don't need the index</li>
+    <li>You just want to access each item</li>
+    </ul>
+
+    <h2 id="while-loop">While Loop</h2>
+    <p>Unlike for loops, which are best when you know how many times to repeat, while and do-while loops are useful when the number of repetitions is unknown.</p>
+    
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/iteration_while_loop_syntax.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <p>What happens in the loop:</p>
+    <ul>
+    <li>Checks the condition first</li>
+    <li>Only enters the loop if the condition is true</li>
+    <li>If the condition is false at the start, the loop does not run at all</li>
+    </ul>
+    
+    <p>Example of input validation using a while loop:</p>
+
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/iteration_while_loop_application.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <h2 id="do-while-loop">do-while Loop</h2>
+
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/iteration_do_while_loop_syntax.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <p>What it does:</p>
+    <ul>
+    <li>Runs the loop body once, then checks the condition</li>
+    <li>If the condition is true, it repeats</li>
+    <li>Always executes at least one time</li>
+    </ul>
+
+    <p>Example of a simple menu system with a do-while loop:</p>
+    
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/iteration_do_while_loop_application.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+    <h2>By Mark Danishevsky [2025]</h2>
+    <div style="margin-top: 10px;">
+      <a href="https://www.linkedin.com/in/mark-danishevsky-42844523b/">
+        <img src="../logos/linkedin.png" alt="LinkedIn" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://devpost.com/danishevskym?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">
+        <img src="../logos/devpost.png" alt="Devpost" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://github.com/MarkDanishevsky">
+        <img src="../logos/github.svg" alt="GitHub" style="width:30px;height:30px;">
+      </a>
+    </div>
+  </div>
+  
+
+</body>
+</html>

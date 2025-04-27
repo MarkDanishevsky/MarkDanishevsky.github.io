@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Tutorials: Boolean Expressions</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+
+<div class="header">
+  <h1>Mark Danishevsky</h1>
+  <h2>Tutorials: Boolean Expressions</h2>
+</div>
+
+<div class="navbar">
+    <a href="../index.html">Home</a>
+    <a href="../tutorials.html">Tutorials</a>
+    <a href="../about.html">About me</a>
+    <a href="../projects.html">Projects</a>
+
+    <a href="../files/Resume.pdf" class="right">Resume</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <a href="../tutorials.html">Back to tutorials home</a>
+
+    <h2>Boolean Expressions Navigation</h2>
+    <ul>
+      <li><a href="#if-else-if-else">if, else if, and else</a></li>
+      <li><a href="#logical-operators">Logical Operators</a></li>
+      <li><a href="#de-morgans-laws">De Morgan's Laws</a></li>
+    </ul>
+  </div>
+  <div class="main">
+    <h2 id="if-else-if-else">if, else if, and else</h2>
+    <p>Consider the following code segment:</p>
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/if_else.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+      
+    <p>In the code segment:</p>
+    <ul>
+        <li>if evaluates only if the condition inside the brackets evaluates to true.</li>
+            <ul>
+                <li>The program above will print “Grade A” if score >= 90 evaluates to true</li>
+            </ul>
+        <li>else if statements must come after if statements. The condition is evaluated if both the if statement was not executed and the condition in the brackets evaluates to true.</li>
+            <ul>
+                <li>The program above will print “Grade B” if score >= 90 evaluates to false and score >= 80 evaluates to true</li>
+                <li>You can have multiple else if statements in sequence. In that case, at most one will be evaluated (the one which is on top)
+                    <ul>
+                        <li>The program will print “Grade C” if score >= 90 and score >= 80 evaluate to false, and score >= 70 evaluates to true.</li>
+                    </ul>
+                </li>
+            </ul>
+        <li>else statements evaluate only if all the conditions above were false.
+            <ul>
+                <li>The program will print “Grade D” if score >= 90, score >= 80 and score >= 70 all evaluate to false.</li>
+            </ul>
+        </li>
+    </ul>
+
+
+    <h2 id="logical-operators">Logical Operators</h2>
+    <p>Learn about combining conditions using logical operators like <code>&&</code>, <code>||</code>, and <code>!</code>.</p>
+    <table style="border-collapse: collapse; border: 1px solid black; width: 100%;">
+        <tr>
+          <th colspan="10" style="border: 1px solid black; text-align: center; background-color: #e06666; font-size: 20px; padding-top: 10px; padding-bottom: 10px;">Logical Operators</th>
+        </tr>
+        <tr>
+          <th style="border: 1px solid black; padding-top: 10px; padding-bottom: 10px;">Java</th>
+          <th style="border: 1px solid black; padding-top: 10px; padding-bottom: 10px;">Name</th>
+          <th style="border: 1px solid black; padding-top: 10px; padding-bottom: 10px;">Logic Table</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">&&</td>
+          <td style="border: 1px solid black; padding: 8px;">Logical AND</td>
+          <td colspan="8" style="border: 1px solid black; padding: 8px;">
+            
+            <br>
+            <table style="border-collapse: collapse; width: 100%; ">
+                <tr>
+                    <th style="border: 1px solid black; background-color: #6d9eeb;">Inputs</th>
+                    <th style="border: 1px solid black; background-color: #6d9eeb;">true</th>
+                    <th style="border: 1px solid black; background-color: #6d9eeb;">false</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; background-color: #6d9eeb;">true</td>
+                    <td style="border: 1px solid black;">true</td>
+                    <td style="border: 1px solid black;">false</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; background-color: #6d9eeb;">false</td>
+                    <td style="border: 1px solid black;">false</td>
+                    <td style="border: 1px solid black;">false</td>
+                </tr>
+            </table>
+            <br>
+
+          </td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">||</td>
+          <td style="border: 1px solid black; padding: 8px;">Logical OR</td>
+          <td colspan="8" style="border: 1px solid black; padding: 8px;">
+
+            <br>
+            <table style="border-collapse: collapse; width: 100%; ">
+                <tr>
+                    <th style="border: 1px solid black; background-color: #6d9eeb;">Inputs</th>
+                    <th style="border: 1px solid black; background-color: #6d9eeb;">true</th>
+                    <th style="border: 1px solid black; background-color: #6d9eeb;">false</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; background-color: #6d9eeb;">true</td>
+                    <td style="border: 1px solid black;">true</td>
+                    <td style="border: 1px solid black;">true</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; background-color: #6d9eeb;">false</td>
+                    <td style="border: 1px solid black;">true</td>
+                    <td style="border: 1px solid black;">false</td>
+                </tr>
+            </table>
+            <br>
+
+          </td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">!</td>
+          <td style="border: 1px solid black; padding: 8px;">Logical NOT</td>
+          <td colspan="8" style="border: 1px solid black; padding: 8px;">
+
+            <br>
+            <table style="border-collapse: collapse; width: 100%; ">
+                <tr>
+                    <th style="border: 1px solid black; background-color: #6d9eeb;">Input=</th>
+                    <th style="border: 1px solid black; background-color: #6d9eeb;">true</th>
+                    <th style="border: 1px solid black; background-color: #6d9eeb;">false</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black;"></td>
+                    <td style="border: 1px solid black;">false</td>
+                    <td style="border: 1px solid black;">true</td>
+                </tr>
+            </table>
+            <br>
+
+          </td>
+        </tr>
+      </table>
+      
+
+    <h2 id="de-morgans-laws">De Morgan's Laws</h2>
+    <table style="border-collapse: collapse; border: 1px solid black; width: 100%;">
+        <tr>
+          <!-- this will appear to take up the space of all the columns (merged) -->
+          <th colspan="10" style="border: 1px solid black; text-align: center; background-color: #9fc5e8; font-size: 20px; padding-top: 10px; padding-bottom: 10px;">De Morgan's Laws</th> 
+        </tr>
+        <tr>
+          <th style="border: 1px solid black; padding-top: 10px; padding-bottom: 10px;">Rule</th>
+          <th style="border: 1px solid black; padding-top: 10px; padding-bottom: 10px;">English</th>
+          <th style="border: 1px solid black; padding-top: 10px; padding-bottom: 10px;">Symbolic Form</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">Law 1</td>
+          <td style="border: 1px solid black; padding: 8px;">“Not (A and B) is the same as (Not A or Not B)”</td>
+          <td colspan="8" style="border: 1px solid black; padding: 8px;">!(A && B) = !A || !B</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">Law 2</td>
+          <td style="border: 1px solid black; padding: 8px;">“Not (A or B) is the same as (Not A and Not B)”</td>
+          <td colspan="8" style="border: 1px solid black; padding: 8px;">!(A || B) = !A && !B</td>
+        </tr>
+
+      </table>
+
+    <br>
+    <a href="https://www.geeksforgeeks.org/de-morgans-law/">(De Morgan's Law - Theorem, Proofs, Formula & Examples | GeeksforGeeks)</a>
+
+
+    <p>We can use De Morgan's laws to simplify complex logical operations.</p> 
+    <p>For example, let's say we have the following logical operation:<br><code>!(sunny || windy)</code></p>
+    <p>We see that it is very hard to understand what the above logical expression really means, however, with De Morgan's laws we can easily find out what the expression simplifies to.
+        We first apply the 2nd Law <code>(!(A || B) ≡ !A && !B)</code>:</p>
+    <p><code>!(sunny || windy) → !sunny && !windy</code></p>
+  </div>
+</div>
+
+<div class="footer">
+    <h2>By Mark Danishevsky [2025]</h2>
+    <div style="margin-top: 10px;">
+      <a href="https://www.linkedin.com/in/mark-danishevsky-42844523b/">
+        <img src="../logos/linkedin.png" alt="LinkedIn" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://devpost.com/danishevskym?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">
+        <img src="../logos/devpost.png" alt="Devpost" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://github.com/MarkDanishevsky">
+        <img src="../logos/github.svg" alt="GitHub" style="width:30px;height:30px;">
+      </a>
+    </div>
+  </div>
+  
+
+</body>
+</html>

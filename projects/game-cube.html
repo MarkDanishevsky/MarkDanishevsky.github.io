@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Projects: Game Cube</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+
+<div class="header">
+  <h1>Mark Danishevsky</h1>
+  <h2>Projects: Game Cube</h2>
+</div>
+
+<div class="navbar">
+    <a href="../index.html">Home</a>
+    <a href="../tutorials.html">Tutorials</a>
+    <a href="../about.html">About me</a>
+    <a href="../projects.html">Projects</a>
+
+    <a href="../files/Resume.pdf" class="right">Resume</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <a href="../projects.html">Back to projects home</a>
+
+    <h2>La Foire des Sciences Navigation</h2>
+    <ul>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#inspiration">Inspiration</a></li>
+        <li><a href="#what-it-does">What it does</a></li>
+        <li><a href="#how-we-built-it">How we built it</a></li>
+        <li><a href="#challenges">Challenges we ran into</a></li>
+        <li><a href="#accomplishments">Accomplishments that we're proud of</a></li>
+        <li><a href="#what-we-learned">What we learned</a></li>
+        <li><a href="#whats-next">What's next for Game Cube?</a></li>
+        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#demo-video">Demo Video</a></li>
+
+    </ul>
+  </div>
+  <div class="main">    
+    <h2 id="gallery">Gallery</h2>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div style="flex: 0 0 45%;">
+        <p>The completed Game Cube</p>
+        <img id="img" src="assets/game_cube.jpg" style="width:100%;">
+      </div>
+      <div style="flex: 0 0 45%;">
+        <p>Our battery setup</p>
+        <img id="img" src="assets/game_cube_battery.jpg" style="width:100%;">
+      </div>
+      <div style="flex: 0 0 45%;">
+        <p>The Fusion 360 file for the body</p>
+        <img id="img" src="assets/game_cube_fusion.png" style="width:100%;">
+      </div>
+      <div style="flex: 0 0 45%;">
+        <p>The Fusion 360 file for the lid</p>
+        <img id="img" src="assets/game_cube_fusion_2.png" style="width:100%;">
+      </div>
+      <div style="flex: 0 0 45%;">
+        <p>Our original plan for the Game Cube</p>
+        <img id="img" src="assets/game_cube_plan.jpg" style="width:100%;">
+      </div>
+    </div>
+
+
+    <h2 id="inspiration">Inspiration</h2>
+    <p>Our inspiration came from a visit to our friend's house. We noticed that he had an entire wall full of board games, including Connect 4, that were just sitting there, collecting dust. This gave us the idea to make a smaller, more efficient, more interactive Connect 4 game, which eventually became the Game Cube.</p>
+
+    <h2 id="what-it-does">What it does</h2>
+    <p>We built a "game cube" of sorts. Currently, it only plays Connect 4, but in theory, it could be adapted to play any game requiring a low-resolution display and 5 buttons. It uses the two side buttons to change the row that the piece drops in, and the middle to drop the piece.</p>
+
+    <h2 id="how-we-built-it">How we built it</h2>
+    <p>The box itself contains a Raspberry Pi (the brains of the operation), an 8x8 LED matrix connected to the Pi by wires, two 3.7V batteries, and a voltage step-down converter. To attach the lid, we used neodymium magnets. We coded everything in Python and sent all the code to the Pi via SSH.</p>
+
+    <h2 id="challenges">Challenges we ran into</h2>
+    <p>We ran into several challenges during this event. Some buttons didn't work at the beginning, and we couldn't figure out if it was due to the buttons themselves, their connections, or the code. Also, our code had a ton of bugs which we had to iron out with the help of peers and testers. Printing the box was difficult, as the print kept failing; we had to monitor it closely and adjust heating as needed. SSH issues also arose whenever the Pi lost WiFi, assigning it a new IP address we didn't know, making reconnections difficult.</p>
+
+    <h2 id="accomplishments">Accomplishments that we're proud of</h2>
+    <p>We're proud of the portability of our box — it's self-contained, battery-powered, and compact. We're also proud of the modularity: easy access to components and easily editable code. Finally, we're proud of fostering community during the hackathon by hosting a small 8-person competition to test the cube.</p>
+
+    <h2 id="what-we-learned">What we learned</h2>
+    <p>We learned new wiring techniques, how to build working circuits, and how to use two Python libraries: Rpi.GPIO and Adafruit_IO.</p>
+
+    <h2 id="whats-next">What's next for Game Cube?</h2>
+    <p>We plan to add more games like Tetris and Battleship, build reinforcement learning models for AI opponents, and connect cubes together both physically and online for multiplayer games. We'd also like to introduce online multiplayer so players worldwide can connect and play together.</p>
+
+    <h2 id="built-with">Built With</h2>
+    <ul>
+      <li>3D Printer</li>
+      <li>8x8 LED Matrix</li>
+      <li>Adafruit</li>
+      <li>Autodesk Fusion 360</li>
+      <li>Batteries</li>
+      <li>Pushbuttons</li>
+      <li>Python</li>
+      <li>Raspberry Pi</li>
+    </ul>
+    
+    <h2 id="demo-video">Demo Video</h2>
+    <div style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/eYgfcuinYds" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+    <h2>By Mark Danishevsky [2025]</h2>
+    <div style="margin-top: 10px;">
+      <a href="https://www.linkedin.com/in/mark-danishevsky-42844523b/">
+        <img src="../logos/linkedin.png" alt="LinkedIn" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://devpost.com/danishevskym?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">
+        <img src="../logos/devpost.png" alt="Devpost" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://github.com/MarkDanishevsky">
+        <img src="../logos/github.svg" alt="GitHub" style="width:30px;height:30px;">
+      </a>
+    </div>
+  </div>
+  
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Projects: La Foire des Sciences</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+
+<div class="header">
+  <h1>Mark Danishevsky</h1>
+  <h2>Projects: La Foire des Sciences</h2>
+</div>
+
+<div class="navbar">
+    <a href="../index.html">Home</a>
+    <a href="../tutorials.html">Tutorials</a>
+    <a href="../about.html">About me</a>
+    <a href="../projects.html">Projects</a>
+
+    <a href="../files/Resume.pdf" class="right">Resume</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <a href="../projects.html">Back to projects home</a>
+
+    <h2>La Foire des Sciences Navigation</h2>
+    <ul>
+        <li><a href="#objectif">Objectif</a></li>
+        <li><a href="#hypothese">L'hypothèse</a></li>
+        <li><a href="#les-variables">Les Variables</a></li>
+        <li><a href="#materiels">Matériels</a></li>
+        <li><a href="#procedure">Procédure</a></li>
+        <li><a href="#la-collecte-de-donnees">La Collecte de Données</a></li>
+        <li><a href="#resultats-de-la-premiere-experience">Résultats de la Première Expérience</a></li>
+        <li><a href="#la-represantation">La Représentation</a></li>
+        <li><a href="#analyse-et-conclusion">Analyse et Conclusion</a></li>
+        <li><a href="#resume">Résume</a></li>
+        <li><a href="#recherches-faites">Recherches Faites</a></li>
+        <li><a href="#pdf">Format PDF</a></li>
+
+    </ul>
+  </div>
+  <div class="main">
+    <p>Un grand merci a Mr. Bourdouz pour me donnant des suggestions comment meilleur expliquer mon suject. Un grand merci a Peter Cheung pour me donnant des conseils pour comment utiliser les plats petris.</p>
+    
+    
+    <h2 id="objectif">Objectif</h2>
+    <p>Le port des masques remonte aux médecins de la
+        peste noire du 17e siècle qui portait des cagoules
+        spéciales à long bec, à cause des idées fausses de la
+        transmission des virus. Depuis, dans la pandémie
+        Covid-19, le masque a été la défense la plus utilisée
+        contre le virus. Mon objectif dans cette expérience est
+        d'étudier l'efficacité des différents types de masques
+        (2eme expérience), le masque à usage unique, un
+        masque fait maison (tissu, matériaux synthétique) le
+        masque chirurgical, et le masque KN-95 et les
+        comparer au fait de ne pas porter un masque.
+        Pars ailleurs, je voudrais profiter de mon expérience et
+        aussi savoir qui devrait porter le masque pour être
+        protégé (1ere expérience): est-ce la personne
+        contaminée ou la personne saine?</p>
+    <div style="text-align: center;">
+      <img id="img" src="assets/cagoule.png" style="width:10%;">
+    </div>
+
+
+
+    <h2 id="hypothese">L'hypothèse</h2>
+    <p>Mon hypothèse pour cette expérience est que le masque KN-95
+        serait le plus efficace à empêcher la propagation des bactéries.
+        Je pense ceci parce que plusieurs scientifiques ont montré la
+        grande efficacité de filtrage du masque N-95 contre tous
+        les variants du virus (dépasse les 95%, contre un masque
+        chirurgical ~40%).</p>
+
+
+    <h2 id="les-variables">Les Variables</h2>
+    <h3>Les Variables Indépendantes:</h3>
+    <ul>
+      <li>Le montant de salive après chaque toux</li>
+      <li>Distance parcourue par la salive</li>
+      <li>Le nombre de bactéries en fonction de l'humidité de l'air</li>
+    </ul>
+
+    <h3>Les Variables Dépendantes:</h3>
+    <ul>
+      <li>Le nombre de colonies dans le plat pétri</li>
+    </ul>
+
+    <h3>Les Variables Contrôlées:</h3>
+    <ul>
+      <li>La distance entre le plat pétri et la bouche de la personne qui tousse</li>
+      <li>Le type de masque utilisé dans l'expérience ou la combinaison de masques utilisés pour la première expérience</li>
+    </ul>
+    <h2 id="materiels">Matériels</h2>
+    <ul>
+      <li>Des plats pétris avec du agar nutritif</li>
+      <li>Différents masques : un masque fait maison (tissu, matériaux synthétique), masque chirurgical, masque à usage unique, et un masque KN-95</li>
+      <li>Une règle de plus de 60 cm</li>
+      <li>Une table de plus de 60 cm</li>
+      <li>Un ordinateur avec :
+        <ul>
+          <li>Excel</li>
+          <li>Python + Plotly + JupyterNotebook</li>
+          <li>CountThings By Camera</li>
+        </ul>
+      </li>
+    </ul>
+
+
+
+    <h2 id="procedure">Procédure</h2>
+    <p>Pour chaque type de masque (2ème expérience, C'est quoi le masque le plus efficace?) ou pour chaque combinaison de masques (1ère expérience, Qui devrait porter le masque?) :</p>
+    <ul>
+      <li>Je place les plats pétris aux distances suivantes : 20cm, 40cm, et 60cm pour la 2ème expérience, ou seulement la distance de 20cm pour la première expérience.</li>
+      <li>Je tousse sur tous les plats pétris en portant le masque spécifié.</li>
+      <li>Je mets les plats pétris dans un endroit chaud (~35˚C) et non-humide, répliquant l'environnement d'un incubateur, l'environnement idéal pour la croissance des colonies de bactéries. Ensuite, j'attends pour que les colonies puissent grandir (environ 4 jours, après le temps sans résultats mais avant que la moisissure ne commence à se développer).</li>
+      <li>Après avoir attendu les 4 jours, je compte le nombre de colonies en utilisant l'application « CountThings By Camera ».</li>
+    </ul>
+    
+    <h2 id="la-collecte-de-donnees">La Collecte de Données</h2>
+    <p>Résultats de la Première Expérience</p>
+    <table border="1" style="border-collapse: collapse; width: 100%; text-align: center;">
+      <thead>
+        <tr>
+          <th>Expérience [Contaminée, Saine]</th>
+          <th>Distance (cm)</th>
+          <th>Nombre de Colonies</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sans Masque, Sans Masque</td>
+          <td>20</td>
+          <td>87</td>
+        </tr>
+        <tr>
+          <td>Sans Masque, Avec Masque</td>
+          <td>20</td>
+          <td>34</td>
+        </tr>
+        <tr>
+          <td>Avec Masque, Sans Masque</td>
+          <td>20</td>
+          <td>24</td>
+        </tr>
+        <tr>
+          <td>Avec Masque, Avec Masque</td>
+          <td>20</td>
+          <td>5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Résultats de la Deuxième Expérience</p>
+    <table border="1" style="border-collapse: collapse; width: 100%; text-align: center;">
+        <thead>
+        <tr>
+            <th>Expérience</th>
+            <th>Distance (cm)</th>
+            <th>Nombre de Colonies</th>
+            <th>Type de Masque</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td>Sans masque</td><td>20</td><td>113</td><td>Sans masque</td></tr>
+        <tr><td>Sans masque</td><td>40</td><td>102</td><td>Sans masque</td></tr>
+        <tr><td>Sans masque</td><td>60</td><td>81</td><td>Sans masque</td></tr>
+        <tr><td>Masque chirurgical</td><td>20</td><td>57</td><td>Masque chirurgical</td></tr>
+        <tr><td>Masque chirurgical</td><td>40</td><td>43</td><td>Masque chirurgical</td></tr>
+        <tr><td>Masque chirurgical</td><td>60</td><td>35</td><td>Masque chirurgical</td></tr>
+        <tr><td>N95</td><td>20</td><td>31</td><td>N95</td></tr>
+        <tr><td>N95</td><td>40</td><td>28</td><td>N95</td></tr>
+        <tr><td>N95</td><td>60</td><td>26</td><td>N95</td></tr>
+        <tr><td>Tissu synthétique</td><td>20</td><td>71</td><td>Tissu synthétique</td></tr>
+        <tr><td>Tissu synthétique</td><td>40</td><td>61</td><td>Tissu synthétique</td></tr>
+        <tr><td>Tissu synthétique</td><td>60</td><td>55</td><td>Tissu synthétique</td></tr>
+        </tbody>
+    </table>
+
+    <br>
+    <div style="text-align: center;">
+        <img id="img" src="assets/plats_avec_regle.png" style="width:10%;">
+    </div>
+
+    <h2 id="resultats-de-la-premiere-experience">Résultats de la Première Expérience</h2>
+    <div style="text-align: center;">
+        <img id="img" src="assets/premiere_experience.png" style="width:100%;">
+    </div>
+
+    <h2 id="la-represantation">La Représentation</h2>
+    <h1>La Foire des Sciences | Mark Danishevsky</h1>
+                <p><br>La protection des différentes combinaisons de masques entre la personne contaminée et la personne saine [Graphique à barres] (Première expérience)</p>
+                <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="assets/Bar.html" height="525" width="100%"></iframe>
+                <p><br>La protection des différentes combinaisons de masques entre la personne contaminée et la personne saine [Graphique en entonnoir] (Première expérience)</p>
+                <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="assets/Funnel.html" height="525" width="100%"></iframe>
+                <p><br>La protection des différentes types de masques [Graphique en entonnoir] (Deuxième expérience)</p>
+                <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="assets/Bar_Secondairy.html" height="525" width="100%"></iframe>
+                <p><br>La protection des différentes types de masques [Graphique en nuage de points] (Deuxième expérience)</p>
+                <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="assets/Scatter.html" height="525" width="100%"></iframe>
+                <br>
+
+    <h2 id="analyse-et-conclusion">Analyse et Conclusion</h2>
+    <p>Dans ma deuxième expérience (C'est quoi le masque le plus
+        efficace?), j'ai trouve que le masque le plus efficace a arrêter la
+        propagation de bactéries était le masque N-95, validant mon
+        hypothèse.
+        La deuxième masque la plus efficace est le masque chirurgical, suivi
+        par le masque fait maison, suivi finalement par ne pas porter un
+        masque.
+        Cela signifie que c'est plus sécuritaire de porter un bon masque
+        comme le N-95, que de ce distancer 60cm avec un masque non-
+        efficace comme le masque fait maison, ou même le masque
+        chirurgical. Mes donnes montrent aussi que n'importe quel masque
+        que tu porte, c'est beaucoup plus efficace que de ne pas porter un
+        masque. Mes donnes sont aussi conformes de l'étude « Evaluation of
+        Cloth Masks and Modified Procedure Masks as Personal Protective
+        Equipment for the Public During the COVID-19 Pandemic » par Philip
+        W. Clapp et 7 autres scientifiques, qui ont trouvées que l'efficacité de
+        la filtration du masque N-95 est beaucoup plus grande que l'efficacité
+        de la filtration du masque chirurgical.
+        </p>
+
+        
+    <h2 id="resume">Résume</h2>
+    <p>Dans mes expériences j'ai trouvé :</p>
+    <ul>
+      <li>Le masque a un effet protecteur en respect à la transmission de bactéries.</li>
+      <li>Dans une situation où il y a un masque qui doit être sur la personne saine ou sur la personne contaminée, il est plus sécuritaire qu'il soit porté par la personne contaminée.</li>
+      <li>Le masque le plus efficace est le N-95, suivi par le masque chirurgical, le masque fait maison, et finalement ne pas porter de masque.</li>
+      <li>Plus grande est la distance entre la personne contaminée et la personne saine, moins la personne saine reçoit de bactéries.</li>
+    </ul>
+    <h2 id="recherches-faites">Recherches Faites</h2>
+
+    <h3>“Effectiveness of Face Masks in Preventing Airborne Transmission of SARS-CoV-2”</h3>
+    <p>par Hiroshi Ueki et 6 autres scientifiques de l'université de Tokyo. Publié le 21 octobre 2020 par NCBI.</p>
+    <h4>Observations :</h4>
+    <ul>
+      <li>Porter un masque a un effet protecteur en respect à la transmission de gouttelettes infectieuses de COVID-19.</li>
+      <li>L'efficacité d'un masque devient plus élevée lorsque le propagateur porte un masque plutôt que la victime.</li>
+      <li>Les masques N-95, même complètement scellés, n'ont pas complètement bloqué la propagation de COVID-19.</li>
+    </ul>
+    <div style="text-align: center;">
+        <img id="img" src="assets/experiment_ncbi.png" style="width:50%;">
+    </div>
+
+    <h3>« Evaluation of Cloth Masks and Modified Procedure Masks as Personal Protective Equipment for the Public During the COVID-19 Pandemic »</h3>
+    <p>par Philip W. Clapp et 7 autres scientifiques. Publié le 10 décembre 2020 par JAMA Network.</p>
+    <h4>Observations :</h4>
+    <ul>
+      <li>L'efficacité de la filtration des masques de consommateurs varie de 26.5% à 79.0%.</li>
+      <li>Des modifications prévues pour améliorer l'efficacité peuvent augmenter la filtration d'un masque commercial de 38.5% à 80.5%.</li>
+    </ul>
+    <div style="text-align: center;">
+        <img id="img" src="assets/experiment_jama_network_1.png" style="width:30%;">
+    </div>
+
+    <h3>« Filtration Efficiency of Hospital Face Mask Alternatives Available for Use During the COVID-19 Pandemic »</h3>
+    <p>par Emily E. Sickbert-Bennett et 2 autres scientifiques. Publié le 11 août 2020 par JAMA Network.</p>
+    <h4>Observations :</h4>
+    <ul>
+      <li>L'efficacité des masques N-95, lorsqu'ils ne sont pas portés dans la bonne taille, peut diminuer de ~95% à ~90%.</li>
+      <li>Les masques N-95 expirés et des alternatives ajustées ont la même efficacité de filtration après stérilisation.</li>
+    </ul>
+    <div style="text-align: center;">
+        <img id="img" src="assets/experiment_jama_network_2.png" style="width:30%;">
+    </div>
+
+    <h3>Autres recherches</h3>
+    <div style="text-align: center;">
+        <img id="img" src="assets/autres_recherches.png" style="width:100%;">
+    </div>
+
+    <h3>Liens:</h3>
+    <ul>
+      <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7580955/" target="_blank">Lien vers NCBI</a></li>
+      <li><a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2774266" target="_blank">Lien vers JAMA Network (1)</a></li>
+      <li><a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2769443" target="_blank">Lien vers JAMA Network (2)</a></li>
+      <li><a href="https://www.youtube.com/watch?v=AtPcMuQqz1I&t=182s" target="_blank">Lien vers YouTube</a></li>
+      <li><a href="https://www.nist.gov/blogs/taking-measure/my-stay-home-lab-shows-how-face-coverings-can-slow-spread-disease" target="_blank">Lien vers NIST Blog</a></li>
+      <li><a href="https://twitter.com/richdavisphd/status/1276629360212979712" target="_blank">Lien vers Twitter</a></li>
+    </ul>
+
+    <h2 id="pdf">Format PDF</h2>
+    <title>Présentation | Mark</title>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="assets/La Foire Des Sciences.pdf" height="525" width="100%"></iframe>
+    <br>
+        
+
+  </div>
+</div>
+
+<div class="footer">
+    <h2>By Mark Danishevsky [2025]</h2>
+    <div style="margin-top: 10px;">
+      <a href="https://www.linkedin.com/in/mark-danishevsky-42844523b/">
+        <img src="../logos/linkedin.png" alt="LinkedIn" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://devpost.com/danishevskym?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">
+        <img src="../logos/devpost.png" alt="Devpost" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://github.com/MarkDanishevsky">
+        <img src="../logos/github.svg" alt="GitHub" style="width:30px;height:30px;">
+      </a>
+    </div>
+  </div>
+  
+
+</body>
+</html>

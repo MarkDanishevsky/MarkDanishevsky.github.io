@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Tutorials: Arrays & ArrayLists</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+
+<div class="header">
+  <h1>Mark Danishevsky</h1>
+  <h2>Tutorials: Arrays & ArrayLists</h2>
+</div>
+
+<div class="navbar">
+    <a href="../index.html">Home</a>
+    <a href="../tutorials.html">Tutorials</a>
+    <a href="../about.html">About me</a>
+    <a href="../projects.html">Projects</a>
+
+    <a href="../files/Resume.pdf" class="right">Resume</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <a href="../tutorials.html">Back to tutorials home</a>
+
+    <h2>Primitive Types Navigation</h2>
+    
+    <ul>
+        <li><a href="#java-arrays">Java arrays</a>
+            <ul>
+            <li><a href="#creating-arrays">Creating Arrays</a></li>
+            <li><a href="#accessing-array-elements">Accessing Array Elements</a></li>
+            <li><a href="#looping-through-array">Looping through an Array</a></li>
+            <li><a href="#things-to-be-aware-of">Things to be aware of when using arrays</a></li>
+            </ul>
+        </li>
+        <li><a href="#java-arraylists">Java ArrayLists</a>
+            <ul>
+            <li><a href="#declaring-arraylists">Declaring and assigning values to an ArrayList</a></li>
+            <li><a href="#size-vs-length">.size() vs .length vs .length()</a></li>
+            <li><a href="#arraylist-methods">ArrayList methods</a></li>
+            </ul>
+        </li>
+    </ul>
+  </div>
+  <div class="main">
+
+    <h2 id="java-arrays">Java arrays</h2>
+    <p>An array is a fixed-size collection of elements, all of the same type. You can think of it like a row of labeled boxes, each holding one value.</p>
+
+    <p>A good analogy is a row of mailboxes, each one holding a number or name. Each mailbox has an index, starting from 0 (in programming arrays are zero-based, meaning their indexes start at 0).</p>
+
+    <h3 id="creating-arrays">Creating Arrays</h3>
+    <p>There are two ways to create arrays in Java:<br>
+    Create an empty array<br>
+    Create an array based on existing values</p>
+
+    <p>We can see both of these methods below:</p>
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/arrays_example.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <h3 id="accessing-array-elements">Accessing Array Elements</h3>
+    <p>You use indexes (starting at 0) to get or set values in an array.</p>
+    
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/arrays_indexing_assigning.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <h3 id="looping-through-array">Looping through an Array</h3>
+    <p>Traditional for loop:</p>
+
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/arrays_looping_traditional.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+    </code></pre>
+    
+    <p>Enhanced for loop:</p>
+
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/arrays_looping_enhanced.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <h3 id="things-to-be-aware-of">Things to be aware of when using arrays</h3>
+    <ul>
+    <li>Use proper indexes</li>
+    <li>The first element in an array is 0 not 1</li>
+    <li>The last element in an array is arr.length - 1, not arr.length</li>
+    <li>An incorrect index will throw an ArrayIndexOutOfBoundsException.</li>
+    </ul>
+
+    <p>Trying to resize an array: this is impossible with arrays, but it is impossible with ArrayLists (next topic).</p>
+
+    <p>Mixing up data types: an array can contain only one type of variables, so assigning a String value to an array of int's is impossible.</p>
+
+    <h2 id="java-arraylists">Java ArrayLists</h2>
+    <p>An ArrayList is like an array, but it can grow or shrink as needed. It belongs to the java.util package.</p>
+
+    <p>To use ArrayLists, you must first import them as follows:</p>
+    
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/arraylist_importing.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <h3 id="declaring-arraylists">Declaring and assigning values to an ArrayList</h3>
+    
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/arraylists_assigning.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <h3 id="size-vs-length">.size() vs .length vs .length()</h3>
+    <p><a href="https://stackoverflow.com/questions/20192843/difference-between-size-and-length-methods">[StackOverflow] Difference between size and length methods? - java</a></p>
+    <ul>
+    <li>.size() is used for ArrayLists, as the length of an ArrayList</li>
+    <li>.length is used for arrays, as the value does not change, so the length is an unchanging attribute of the array</li>
+    <li>.length() is used for Strings, as their length can change</li>
+    </ul>
+
+    <h3 id="arraylist-methods">ArrayList methods</h3>
+    <p><a href="https://www.w3schools.com/java/java_arraylist.asp">[W3 Schools] Java ArrayList</a></p>
+
+    <table style="border: 1px solid black; border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+        <th style="border: 1px solid black; padding: 12px; background-color: #a4c2f4;">Method</th>
+        <th style="border: 1px solid black; padding: 12px; background-color: #a4c2f4;">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">.add(value)</td>
+        <td style="border: 1px solid black; padding: 8px;">Ands and element to the back of the ArrayList</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">.get(index)</td>
+        <td style="border: 1px solid black; padding: 8px;">Returns the value at the index index</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">.set(index, value)</td>
+        <td style="border: 1px solid black; padding: 8px;">Sets the element at index index to have value value</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">.remove(index)</td>
+        <td style="border: 1px solid black; padding: 8px;">Removes element at index index</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">.size()</td>
+        <td style="border: 1px solid black; padding: 8px;">Returns number of elements in the array</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">.contains(value)</td>
+        <td style="border: 1px solid black; padding: 8px;">Checks if a value exists in the ArrayList</td>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer">
+    <h2>By Mark Danishevsky [2025]</h2>
+    <div style="margin-top: 10px;">
+      <a href="https://www.linkedin.com/in/mark-danishevsky-42844523b/">
+        <img src="../logos/linkedin.png" alt="LinkedIn" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://devpost.com/danishevskym?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">
+        <img src="../logos/devpost.png" alt="Devpost" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://github.com/MarkDanishevsky">
+        <img src="../logos/github.svg" alt="GitHub" style="width:30px;height:30px;">
+      </a>
+    </div>
+  </div>
+  
+
+</body>
+</html>

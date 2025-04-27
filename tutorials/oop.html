@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Tutorials: OOP</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+
+<div class="header">
+  <h1>Mark Danishevsky</h1>
+  <h2>Tutorials: Object Oriented Programming</h2>
+</div>
+
+<div class="navbar">
+    <a href="../index.html">Home</a>
+    <a href="../tutorials.html">Tutorials</a>
+    <a href="../about.html">About me</a>
+    <a href="../projects.html">Projects</a>
+
+    <a href="../files/Resume.pdf" class="right">Resume</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <a href="../tutorials.html">Back to tutorials home</a>
+
+    <h2>OOP Navigation</h2>
+    <ul>
+      <li><a href="#what-is-oop">What is OOP?</a></li>
+      <li><a href="#uml">UML Representation</a></li>
+      <li><a href="#inheritance-intro">Inheritance Introduction</a></li>
+      <li><a href="#inheritance-example">Inheritance Example</a></li>
+      <li><a href="#is-a-has-a-relationship">Is-a and Has-a relationship</a></li>
+      <li><a href="#visual-example">Visual Example</a></li>
+      <li><a href="#super-keyword">super() keyword</a></li>
+      <li><a href="#constructors">Constroctors</a></li>
+      <li><a href="#inheritance-code-example">Inheritance Code Example</a></li>
+      <li><a href="#mistakes-to-avoid">Mistakes to Avoid</a></li>
+
+
+    </ul>
+  </div>
+  <div class="main">
+
+    <h2 id="what-is-oop">What is OOP?</h2>
+    <p>Object-Oriented Programming (OOP) is a programming paradigm that organizes code using objects—real-world representations of things. It helps developers structure programs in a more modular, understandable, and reusable way.</p>
+    <a href="https://www.geeksforgeeks.org/introduction-of-object-oriented-programming/">Introduction of Object Oriented Programming | GeeksforGeeks</a>
+    <p><b>Definitions of OOP concepts:</b></p>
+    <ul>
+        <li>
+            <p>
+            A class is a blueprint or template for an object. It defines what an object can do (behaviour) and what information it holds (attributes). An analogy is like the design of a car: the class defines what parts it will have and what it can do (drive, honk, etc.)</p>
+            <a href="https://www.w3schools.com/java/java_oop.asp">[W3 Schools] Java OOP (Object-Oriented Programming)</a>
+            <br>
+            <img id="img" src="screenshots/oop_intro.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+
+        </li>
+
+        <li>
+            <p>An object is a specific instance of a class. It represents a specific example created from a class blueprint with its own unique attributes. Two instances of the same class will have the same behaviour but will have different parameters. If a class is a car design, then an object of that class can be a Red 2005 Toyota Camry.</p>
+            <img id="img" src="screenshots/oop_instances.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+
+        </li>
+
+
+
+    </ul>
+
+
+    <h2 id="uml">UML Representation</h2>
+    <p>Classes are commonly represented using Unified Modeling Language (UML) structure. A simple example of UML is below:</p>
+    <img id="img" src="screenshots/oop_uml_format.png" style="max-width: 100%; height: auto; margin-top: 10px;">
+    <p><b>First we see that a class has three sections:</b></p> 
+    <ol>
+
+        <li>The name of the class, in our case ClassName (make sure it follows the naming conventions for classes - it must begin with a capital letter)</li>
+        
+        <li>The attributes of the class, their respective data type and their access symbol
+            <ul><li>Done in the format: [access symbol] [variable name]: [variable type]</li></ul>
+        </li>
+
+        <li>The methods of the class, their parameters (if applicable) and their return types.
+            <ul>
+                <li>Done in the format: [access symbol] [method name]([parameters and respective types]): [output type (or void if none)]</li>
+                <li>Constructor format: [access symbol] [class Name]([parameters and respective types])</li>
+            </ul>
+        </li>
+
+    </ol>
+
+    <p><b>Next we see that an instance of a class has 2 sections:</b></p>
+    <ol>
+
+        <li>The name of the instance, following all naming conventions</li>
+        
+        <li>The attributes of the method
+            <ul><li>[variable name] = [value of variable]</li></ul>
+        </li>
+
+    </ol>
+
+    <p><b>Note</b>: one class can have multiple instances.</p>
+    <p>The symbols before a method or attribute in a class are bellow ([UMLDiagrams.org] <a href="https://www.uml-diagrams.org/visibility.html">Visibility in UML</a>):</p>
+
+    <table style="border-collapse: collapse; width: 100%;">
+        <tr>
+          <th style="border: 1px solid black; background-color: #6d9eeb; padding: 12px;">Symbol</th>
+          <th style="border: 1px solid black; background-color: #6d9eeb; padding: 12px;">Meaning</th>
+          <th style="border: 1px solid black; background-color: #6d9eeb; padding: 12px;">Access Level</th>
+          <th style="border: 1px solid black; background-color: #6d9eeb; padding: 12px;">Example</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">+</td>
+          <td style="border: 1px solid black; padding: 8px;">Public</td>
+          <td style="border: 1px solid black; padding: 8px;">Accessible from anywhere</td>
+          <td style="border: 1px solid black; padding: 8px;">+ drive(): void</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">-</td>
+          <td style="border: 1px solid black; padding: 8px;">Private</td>
+          <td style="border: 1px solid black; padding: 8px;">Accessible only inside the class</td>
+          <td style="border: 1px solid black; padding: 8px;">- mileage : int</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">#</td>
+          <td style="border: 1px solid black; padding: 8px;">Protected</td>
+          <td style="border: 1px solid black; padding: 8px;">Accessible inside the class and its subclasses</td>
+          <td style="border: 1px solid black; padding: 8px;"># model : String</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 8px;">~</td>
+          <td style="border: 1px solid black; padding: 8px;">Package (default)</td>
+          <td style="border: 1px solid black; padding: 8px;">Accessible within the same package</td>
+          <td style="border: 1px solid black; padding: 8px;">~ speed : int</td>
+        </tr>
+      </table>
+
+    <p>Note that I will only be using '+' and '-' (public and private) in my diagrams. It is good practice to have all attributes set to private, and have other classes access the values of these attributes using a getter method and set the values of these attributes using a setter method.</p>
+    <p>Here is a UML example of creating three instances of a class Car.</p>
+    <img id="img" src="screenshots/oop_car_uml.png" style="max-width: 100%; height: auto; margin-top: 10px;">
+    <p>The equivalent of the UML above but in code would be:</p>
+    <img id="img" src="screenshots/oop_car_code.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    <p>In another class we would have:</p>
+    <img id="img" src="screenshots/oop_car_driver.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+
+    <h2 id="inheritance-intro">Inheritance Introduction</h2>
+    <p>Inheritance is a key concept in Object-Oriented Programming (OOP) that allows a class to inherit properties and methods from another class.</p>
+    <p>Bellow are some definitions of common inheritance terminologies:</p>
+    <p><b>Superclass</b>: A superclass is a general class (like Animal) that contains common attributes and methods. It is the class being inherited from (the parent or base class).</p>
+    <p><b>Subclass</b>: A subclass is a more specific class (like Dog) that inherits the properties of the superclass using the extends keyword. It is the class that inherits from the superclass, so it is the child.</p>
+    <p><b>Extends</b>: The Java keyword used to declare that one class inherits from another.</p>
+    <img id="img" src="screenshots/oop_extends_example.png" alt="Diagram of if-else if-else structure" style="max-width: 75%; height: auto; margin-top: 10px;">
+    <p>Here, the class ExampleSubClass is a superclass of SuperClass.</p>
+    <p>[W3 Schools] <a href="https://www.w3schools.com/java/java_inheritance.asp">Java Inheritance (Subclass and Superclass)</a></p>
+
+
+
+    <h2 id="inheritance-example">Inheritance Example</h2>
+    <img id="img" src="screenshots/oop_basic_example.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    <p>In this example, if we created an instance of Animal, we could run only the method makeSound.
+        However, if we created an instance of Dog, we could run both makeSound and fetch because the Dog inherits the methods of Animal.</p>
+
+
+    <h2 id="is-a-has-a-relationship">Is-a and Has-a relationship</h2>
+    <a href="https://stackoverflow.com/questions/36162714/what-is-the-difference-between-is-a-relationship-and-has-a-relationship-in">What is the difference between "IS -A" relationship and "HAS-A" relationship in Java? - Stack Overflow</a>
+    <ul>
+        <li>Going from a superclass to a subclass we have an <i>“has a”</i> relationship.</li>
+        <li>Going from a subclass to a superclass we have an <i>“is a”</i> relationship.</li>
+        <li>In the case of a Car, SportsCar situation, Car is a parent (superclass) and SportsCar is a child (sub class). A sports car is a type of car, but with more specific features. Car has a (or you could say contains) SportsCar.</li>
+
+    </ul>
+
+
+
+    <h2 id="visual-example">Visual Example</h2>
+    <p>In the scheme below, I create classes to categorize vertebrates:</p>
+    <img id="img" src="screenshots/oop_vertebrates_example.png" style="max-width: 100%; height: auto; margin-top: 10px;">
+    <br>
+    <ul>
+
+        <li>Class Vertebrate is the highest level class, meaning it contains the most general information.</li>
+        <li>
+            Warm Blooded animals extend Vertebrate because Warm Blooded animals are a (is a) type of vertebrates. Warm Blooded animals inherit properties of Vertebrates.
+            <ul><li>Mammal, Bird and Fish extend Warm Blooded animals because they are a (is a) type of Warm Blooded animals. They all inherit properties of Warm Blooded animals.</li></ul>
+        </li>
+        <li>
+            Cold Blooded animals extend Vertebrate because Cold Blooded animals are a (is a) type of vertebrates. Cold Blooded animals inherit properties of Vertebrates.
+            <ul><li>Reptile and Amphibian extend Cold Blooded animals because they are a (is a) type of Warm Blooded animals. They all inherit properties of Cold Blooded animals.</li></ul>
+        </li>
+
+    </ul>
+
+
+
+    <h2 id="super-keyword">super() keyword</h2>
+    <p>The super keyword is used in a subclass to refer to its immediate superclass.</p>
+    <p>It's commonly used for calling the superclass constructor:</p>
+    <img id="img" src="screenshots/oop_super_keyword.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+
+    <p>It can also be used to access a superclass method or field:</p>
+    <img id="img" src="screenshots/oop_uses_of_super.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+
+
+
+
+    <h2 id="constructors">Constructors</h2>
+    <p>In Java, constructors are not inherited, but when a subclass is created, it must call a constructor of its superclass, either automatically or using super().</p>
+    <ul>
+
+        <li>The first line of a subclass constructor is often super() to call the parent's constructor (called an explicit constructor).</li>
+        <li>If you don't write super(), Java will insert super() automatically (implicit constructors). However, this only happens if the superclass has a no argument constructor, otherwise it will crash. <a href="https://stackoverflow.com/questions/24013545/what-is-the-difference-between-implicit-constructor-and-explicit-constructor">java - What is the difference between implicit constructor and explicit constructor? - Stack Overflow</a></li>
+        <li>You can use super(argument) to call a specific constructor in the superclass.</li>
+    </ul>
+
+
+
+
+    <h2 id="inheritance-code-example">Inheritance Code Example</h2>
+    <p>I will now create a very similar scenario to the one above (Vertebrates, Warm Blooded, Cold Blooded, …) with the removal of Fish and Amphibian, for the sake of simplicity. We will first model the program in Java:</p>
+    <img id="img" src="screenshots/oop_vertebrates_code.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    <p>Now I will run in a separate class Main several commands, explain what they will output and why.</p>
+    <table style="border: 1px solid black; border-collapse: collapse; width: 100%;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid black; padding: 12px; background-color: #6d9eeb;">Code (in Main.java)</th>
+            <th style="border: 1px solid black; padding: 12px; background-color: #6d9eeb;">Output</th>
+            <th style="border: 1px solid black; padding: 12px; background-color: #6d9eeb;">Explanation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid black; padding: 8px;">Vertebrate v = new Vertebrate();<br>v.move();</td>
+            <td style="border: 1px solid black; padding: 8px;">The vertebrate moves.</td>
+            <td style="border: 1px solid black; padding: 8px;">Calls the base class method directly.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black; padding: 8px;">WarmBlooded w = new WarmBlooded();<br>w.move();</td>
+            <td style="border: 1px solid black; padding: 8px;">The warm-blooded animal walks or flies.</td>
+            <td style="border: 1px solid black; padding: 8px;">Uses overridden method in WarmBlooded.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black; padding: 8px;">Bird b = new Bird();<br>b.move();</td>
+            <td style="border: 1px solid black; padding: 8px;">The warm-blooded animal walks or flies. The bird flies.</td>
+            <td style="border: 1px solid black; padding: 8px;">Bird overrides move() and calls super.move() to include WarmBlooded’s version.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black; padding: 8px;">Vertebrate v2 = new Bird();<br>v2.move();</td>
+            <td style="border: 1px solid black; padding: 8px;">The warm-blooded animal walks or flies. The bird flies.</td>
+            <td style="border: 1px solid black; padding: 8px;">Polymorphism: although the reference type is Vertebrate, the actual object’s method in Bird is called.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black; padding: 8px;">ColdBlooded c = new ColdBlooded();<br>c.move();</td>
+            <td style="border: 1px solid black; padding: 8px;">The cold-blooded animal crawls.</td>
+            <td style="border: 1px solid black; padding: 8px;">Uses overridden method in ColdBlooded.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black; padding: 8px;">Reptile r = new Reptile();<br>r.move();</td>
+            <td style="border: 1px solid black; padding: 8px;">The cold-blooded animal crawls. The reptile slithers.</td>
+            <td style="border: 1px solid black; padding: 8px;">Reptile calls super.move() to include the ColdBlooded behavior.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black; padding: 8px;">Vertebrate v3 = new Mammal();<br>v3.move();</td>
+            <td style="border: 1px solid black; padding: 8px;">The warm-blooded animal walks or flies. The mammal walks.</td>
+            <td style="border: 1px solid black; padding: 8px;">Shows polymorphism + inheritance through super.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black; padding: 8px;">Bird b2 = (Bird) new Vertebrate();<br>b2.move();</td>
+            <td style="border: 1px solid black; padding: 8px;">Runtime Error: ClassCastException</td>
+            <td style="border: 1px solid black; padding: 8px;">Cannot cast a base class object to a derived type. Java throws an error during execution.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black; padding: 8px;">((WarmBlooded) new Mammal()).move();</td>
+            <td style="border: 1px solid black; padding: 8px;">The warm-blooded animal walks or flies. The mammal walks.</td>
+            <td style="border: 1px solid black; padding: 8px;">Valid cast up the hierarchy. move() from Mammal is still called because the actual object is Mammal.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black; padding: 8px;">Mammal m = (Mammal) new WarmBlooded();<br>m.move();</td>
+            <td style="border: 1px solid black; padding: 8px;">Runtime Error: ClassCastException</td>
+            <td style="border: 1px solid black; padding: 8px;">Trying to downcast to Mammal, but object is actually only a WarmBlooded. This is not allowed unless it was originally a Mammal.</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+    <h2 id="mistakes-to-avoid">Mistakes to Avoid</h2>
+    <p><b>Forgetting you can only call methods found or inherited by the reference type</b><br>
+        If you have a variable of type SuperClass (let's say Vertebrate) but is instantiated using the constructor of SubClass (let's say Bird), you can't simply run a method found only in the superclass. To do this you would need to cast the variable to the type SubClass (Bird), and then run the method. You can only call methods declared in the reference type (Vertebrate), even if the object is a Bird. You'd need to cast:
+    </p>
+    <img id="img" src="screenshots/oop_common_mistake_1.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+
+
+    <p><b>Incorrect Casting Leading to ClassCastException</b><br>
+        You cannot cast a superclass to a subclass. This code would compile, but it would crash at runtime.
+    </p>
+    <img id="img" src="screenshots/oop_common_mistake_2.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+
+    <p><b>Forgetting a private method cannot be inherited</b><br>
+        A subclass will not inherit a private method from a superclass. If you attempt to call the method from the subclass, you will get a compile error.
+    </p>
+
+  </div>
+</div>
+
+<div class="footer">
+    <h2>By Mark Danishevsky [2025]</h2>
+    <div style="margin-top: 10px;">
+      <a href="https://www.linkedin.com/in/mark-danishevsky-42844523b/">
+        <img src="../logos/linkedin.png" alt="LinkedIn" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://devpost.com/danishevskym?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">
+        <img src="../logos/devpost.png" alt="Devpost" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://github.com/MarkDanishevsky">
+        <img src="../logos/github.svg" alt="GitHub" style="width:30px;height:30px;">
+      </a>
+    </div>
+  </div>
+  
+
+</body>
+</html>

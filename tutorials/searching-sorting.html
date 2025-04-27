@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Tutorials: Searching & Sorting</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+
+<div class="header">
+  <h1>Mark Danishevsky</h1>
+  <h2>Tutorials: Searching & Sorting</h2>
+</div>
+
+<div class="navbar">
+    <a href="../index.html">Home</a>
+    <a href="../tutorials.html">Tutorials</a>
+    <a href="../about.html">About me</a>
+    <a href="../projects.html">Projects</a>
+
+    <a href="../files/Resume.pdf" class="right">Resume</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <a href="../tutorials.html">Back to tutorials home</a>
+
+    <h2>Primitive Types Navigation</h2>
+    <ul>
+        <li><a href="#big-o-notation">Big O Notation</a></li>
+        <li><a href="#searching">Searching</a>
+            <ul>
+            <li><a href="#sequential-linear-search">Sequential (Linear) Search</a></li>
+            <li><a href="#binary-search">Binary Search</a></li>
+            </ul>
+        </li>
+        <li><a href="#sorting">Sorting</a>
+            <ul>
+            <li><a href="#bubble-sort">Bubble Sort</a></li>
+            <li><a href="#selection-sort">Selection Sort</a></li>
+            <li><a href="#insertion-sort">Insertion Sort</a></li>
+            <li><a href="#quicksort">Quicksort</a></li>
+            </ul>
+        </li>
+        <li><a href="#sorting-assignment">Sorting Assignment</a></li>
+    </ul>
+  </div>
+  <div class="main">
+
+    <h2 id="primitive-types">Primitive types</h2>
+    <h2 id="big-o-notation">Big O Notation</h2>
+    <p>Time and space complexity are denoted in big O notation. Big O notation describes the performance of an algorithm as a function of the input size (n), taking only the largest term. If we have an O(n²), we understand that the performance will worsen quadratically with an increasing input size.</p>
+    <p>Below is a simple table explaining the practical meaning behind several common time complexities:</p>
+
+    <table style="border: 1px solid black; border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+        <th style="border: 1px solid black; padding: 12px; background-color: #a4c2f4;">Time Complexity</th>
+        <th style="border: 1px solid black; padding: 12px; background-color: #a4c2f4;">Description</th>
+        <th style="border: 1px solid black; padding: 12px; background-color: #a4c2f4;">Example Algorithm</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">O(1)</td>
+        <td style="border: 1px solid black; padding: 8px;">Constant time</td>
+        <td style="border: 1px solid black; padding: 8px;">Accessing array element</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">O(log n)</td>
+        <td style="border: 1px solid black; padding: 8px;">Logarithmic</td>
+        <td style="border: 1px solid black; padding: 8px;">Binary Search</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">O(n)</td>
+        <td style="border: 1px solid black; padding: 8px;">Linear</td>
+        <td style="border: 1px solid black; padding: 8px;">Sequential Search</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">O(n log n)</td>
+        <td style="border: 1px solid black; padding: 8px;">Efficient Sorting</td>
+        <td style="border: 1px solid black; padding: 8px;">Merge Sort, Quick Sort</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">O(n²)</td>
+        <td style="border: 1px solid black; padding: 8px;">Inefficient Sorting</td>
+        <td style="border: 1px solid black; padding: 8px;">Bubble Sort, Insertion Sort</td>
+        </tr>
+    </tbody>
+    </table>
+
+    <p><a href="https://www.geeksforgeeks.org/analysis-algorithms-big-o-analysis/">Big O Notation Tutorial - A Guide to Big O Analysis | GeeksforGeeks</a></p>
+
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/searching_sorting_big_o.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <p><em>Image from: <a href="https://www.ggorantala.dev/big-o-notation/" target="_blank">ggorantala.dev</a></em></p>
+    <p>In the image above, we see how a large value of n can quickly make unoptimized algorithms very slow.</p>
+
+    <h2 id="searching">Searching</h2>
+    <p>Searching is the process of locating an element in an array based on its value.</p>
+    <p>The two searching algorithms discussed are: sequential search and binary search.</p>
+
+    <h3 id="sequential-linear-search">Sequential (Linear) Search</h3>
+    <ul>
+        <li>Checks each element one-by-one.</li>
+        <li>Works on unsorted data.</li>
+        <li>Time Complexity: O(n)</li>
+        <li>Simple but slow on large datasets.</li>
+    </ul>
+    <p><a href="https://www.geeksforgeeks.org/linear-search/">Linear Search Algorithm | GeeksforGeeks</a></p>
+
+    <h3 id="binary-search">Binary Search</h3>
+    <ul>
+        <li>Repeatedly divides a sorted array in half.</li>
+        <li>Much faster but needs sorted input.</li>
+        <li>Time Complexity: O(log n)</li>
+    </ul>
+    <p><a href="https://www.geeksforgeeks.org/binary-search/">Binary Search Algorithm - Iterative and Recursive Implementation | GeeksforGeeks</a></p>
+
+    <h2 id="sorting">Sorting</h2>
+    <p>Searching is the process of ordering an Array in some order. A common example is sorting integers from least to greatest. <br>
+        If we have an array {3.14, 6.02, 10.5, 1.0} and we run a sorting algorithm on our array, it will become {1.0, 3.14, 6.02, 10.5}. There are countless sorting algorithms which can all complete such a task, however, they have some notable differences - notably efficiency (performance). We have two main benchmarks when it comes to efficiency in algorithms: time complexity and space complexity.
+        <br>
+        Here are various sorting algorithms and a brief description of how they work:
+        
+        </p>
+
+    <h3 id="bubble-sort">1. Bubble Sort</h3>
+    <ul>
+        <li>Repeatedly swaps adjacent elements if they're in the wrong order.</li>
+        <li>Time Complexity: O(n²)</li>
+        <li>Space Complexity: O(1) (in-place <a href="https://www.geeksforgeeks.org/in-place-algorithm/">In-Place Algorithm | GeeksforGeeks</a>)</li>
+        <li>Very slow for large datasets.</li>
+    </ul>
+    <p><a href="https://www.geeksforgeeks.org/bubble-sort-algorithm/">Bubble Sort Algorithm | GeeksforGeeks</a></p>
+
+    <h3 id="selection-sort">2. Selection Sort</h3>
+    <ul>
+        <li>Selects the smallest element and moves it to the correct position.</li>
+        <li>Time Complexity: O(n²)</li>
+        <li>Space Complexity: O(1) (in-place)</li>
+    </ul>
+    <p><a href="https://www.geeksforgeeks.org/selection-sort-algorithm-2/">Selection Sort Algorithm | GeeksforGeeks</a></p>
+
+    <h3 id="insertion-sort">3. Insertion Sort</h3>
+    <ul>
+    <li>Builds the sorted array one item at a time by inserting elements.</li>
+    <li>Time Complexity: O(n²)</li>
+    <li>Space Complexity: O(1) (in-place)</li>
+    <li>Fast on nearly-sorted data.</li>
+    </ul>
+    <p><a href="https://www.geeksforgeeks.org/insertion-sort-algorithm/">Insertion Sort Algorithm | GeeksforGeeks</a></p>
+
+    <h3 id="quicksort">Quicksort</h3>
+    <p>Quicksort is a very efficient divide and conquer sorting algorithm that works by first selecting a pivot element from the array (this selection is very important in the speed of the algorithm), and then partitioning the other elements into two sub-arrays — those less than the pivot and those greater than the pivot. The process is then recursively applied to the resulting sub arrays. This is done until the sub arrays are of size 1 or less, in which case they are sorted (an array of one element is by definition sorted). The key operation is the partitioning, which rearranges elements so that the pivot ends up in its final sorted position (we used Lomuto's Partitioning technique in our presentation). 
+        Unlike Merge Sort, Quicksort usually doesn't require extra space because it sorts in place, making its space complexity O(log n) due to the recursion stack. It is worth noting that this figure can be misleading, because storing the recursion stack takes much less space than the array itself.
+        In the average case, Quicksort runs in O(n log n) time, making it very fast for large datasets. However, its worst-case time complexity is O(n²), which happens when the pivot divides the array very unevenly (e.g., if the smallest or largest element is always chosen as pivot and the data is exactly sorted or unsorted). This can be avoided by using a good pivot strategy like choosing the median of 3 (first, last and middle values), the Pseudomedian of 9 (the median of the median of the first third, the second third and third third of the array) or a random element (very good for it's simplicity). Using one of these pivoting techniques, the possibility for a O(n2) ‘slowdown' is mathematically impossible for large datasets, as the probability of choosing a bad pivot a significant number of times for large values of n is zero. Quicksort is therefore widely used because of its excellent average-case performance and low memory overhead.
+        </p>
+
+    <p>Below is an implementation of Quicksort:</p>
+    <div style="text-align: center;">
+        <img id="img" src="screenshots/searching_sorting_quicksort.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <p><a href="https://www.geeksforgeeks.org/quick-sort-algorithm/">Quick Sort Algorithm | GeeksforGeeks</a></p>
+
+    <h3>Comparison of Sorting Algorithms</h3>
+
+    <table style="border: 1px solid black; border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+        <th style="border: 1px solid black; padding: 12px; background-color: #6d9eeb;">Algorithm</th>
+        <th style="border: 1px solid black; padding: 12px; background-color: #6d9eeb;">Time Complexity</th>
+        <th style="border: 1px solid black; padding: 12px; background-color: #6d9eeb;">Space Complexity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">Bubble Sort</td>
+        <td style="border: 1px solid black; padding: 8px;">O(n²)</td>
+        <td style="border: 1px solid black; padding: 8px;">O(1)</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">Selection Sort</td>
+        <td style="border: 1px solid black; padding: 8px;">O(n²)</td>
+        <td style="border: 1px solid black; padding: 8px;">O(1)</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">Insertion Sort</td>
+        <td style="border: 1px solid black; padding: 8px;">O(n²) (best: O(n))</td>
+        <td style="border: 1px solid black; padding: 8px;">O(1)</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px; background-color: #ea9999;">Quick Sort</td>
+        <td style="border: 1px solid black; padding: 8px; background-color: #ea9999;">O(n log n) (worst: O(n²))</td>
+        <td style="border: 1px solid black; padding: 8px; background-color: #ea9999;">O(log n)</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">Merge Sort</td>
+        <td style="border: 1px solid black; padding: 8px;">O(n log n)</td>
+        <td style="border: 1px solid black; padding: 8px;">O(n)</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">Binary Search</td>
+        <td style="border: 1px solid black; padding: 8px;">O(log n)</td>
+        <td style="border: 1px solid black; padding: 8px;">O(1) iterative / O(log n) recursive</td>
+        </tr>
+        <tr>
+        <td style="border: 1px solid black; padding: 8px;">Linear Search</td>
+        <td style="border: 1px solid black; padding: 8px;">O(n)</td>
+        <td style="border: 1px solid black; padding: 8px;">O(1)</td>
+        </tr>
+    </tbody>
+    </table>
+
+    <h2 id="sorting-assignment">Sorting Assignment</h2>
+    <p>Sebastian, Joseph and I worked together for the Sorting Assignment. The sorting assignment had us read from a file the names of all the countries, their respective population, area and capital city. We then had to save this data into 4 parallel arrays, and write to a file the countries sorted by (1) alphabetical order and (2) by population.</p>
+    <br>
+    <p>How we completed each step:</p>
+    <ul>
+        <li>Reading the data from the file was very difficult because the data in the file was inconsistent, as some countries have spaces in their names or their capitals. Therefore, simply splitting by spaces would not work. We overcame this issue by creating a large array containing all of the countries which are exceptions to the rule of single word country and single word capital.
+            <ul><li>You can see a sample of what the data would have looked like below:
+                <table style="border: 1px solid black; border-collapse: collapse; width: 100%;">
+                    <tr>
+                      <td style="border: 1px solid black; padding: 8px;">
+                        Afghanistan Kabul 250,000 31,056,997<br>
+                        Albania Tiranë 11,100 3,581,655<br>
+                        ...<br>
+                        Belarus Mensk (Minsk) 80,154 10,293,011  <-this is on of the exceptions<br>
+                        ...<br>
+                        Zimbabwe Harare 150,803 12,236,805</td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <p>Below is our array of exceptions</p>
+                <div style="text-align: center;">
+                    <img id="img" src="screenshots/searching_sorting_assignment_exceptions.png" style="max-width: 100%; height: auto; margin-top: 10px;">
+                </div>
+                <br>
+            </li>
+            <li>This was a very difficult step because of its tedious nature.</li>
+            </ul>
+        </li>
+
+        <br>
+
+        <li><p>The process of saving the data into four parallel Arrays was trivial once we figured out how to read the countries
+            <div style="text-align: center;">
+                <img id="img" src="screenshots/searching_sorting_assignment_arrays.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+            </div>
+        </p></li>
+
+        <li><p>We now have to sort the countries by name, but preserve the relation between a country’s name, its capital, its area and population. The way I did it is by first copying the array of names and sorting it. I also created three more temporary empty arrays which correspond to the other three attributes of a country. Next, for each name in the copied array of items, I had to find the index of that country in the original names array. Because the four arrays are parallel, this index also corresponds to that country's index in the other arrays. I add to my three temporary arrays the value at the index which I have determined of the original three arrays. 
+        From here, I simply overwrite the original arrays with my temporary ones, and the job is complete. What is left is to format the values, and write them to the file. A snippet of the file is below:
+        </p>
+        <div style="text-align: center;">
+            <img id="img" src="screenshots/sorting_searching_assignment_output_alphabetical.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+        </div>
+        <p>The code responsible for my sorting is below:</p>
+        <div style="text-align: center;">
+            <img id="img" src="screenshots/searching_sorting_assignment_alphabetical_search_code.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+        </div>
+    
+        </li>
+
+        <li>The process for sorting the countries in order of population is exactly the same but we create a copy of the populations instead of a copy of the names.</li>
+
+    </ul>
+    
+
+  </div>
+</div>
+
+<div class="footer">
+    <h2>By Mark Danishevsky [2025]</h2>
+    <div style="margin-top: 10px;">
+      <a href="https://www.linkedin.com/in/mark-danishevsky-42844523b/">
+        <img src="../logos/linkedin.png" alt="LinkedIn" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://devpost.com/danishevskym?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">
+        <img src="../logos/devpost.png" alt="Devpost" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://github.com/MarkDanishevsky">
+        <img src="../logos/github.svg" alt="GitHub" style="width:30px;height:30px;">
+      </a>
+    </div>
+  </div>
+  
+
+</body>
+</html>
