@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Projects: Game Cube</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+
+<div class="header">
+  <h1>Mark Danishevsky</h1>
+  <h2>Projects: Clear Skies</h2>
+</div>
+
+<div class="navbar">
+    <a href="../index.html">Home</a>
+    <a href="../tutorials.html">Tutorials</a>
+    <a href="../about.html">About me</a>
+    <a href="../projects.html">Projects</a>
+
+    <a href="../files/Resume.pdf" class="right">Resume</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <a href="../projects.html">Back to projects home</a>
+
+    <h2>Clear Skies Navigation</h2>
+    <ul>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#inspiration">Inspiration</a></li>
+        <li><a href="#what-it-does">What it does</a></li>
+        <li><a href="#how-we-built-it">How we built it</a></li>
+        <li><a href="#challenges">Challenges we ran into</a></li>
+        <li><a href="#accomplishments">Accomplishments that we're proud of</a></li>
+        <li><a href="#what-we-learned">What we learned</a></li>
+        <li><a href="#whats-next">What's next for Game Cube?</a></li>
+        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#demo-video">Demo Video</a></li>
+
+    </ul>
+  </div>
+  <div class="main">    
+    <h2 id="gallery">Gallery</h2>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div style="flex: 0 0 45%;">
+        <p>Safety analysis of the CYYZ (Toronto Pearson) airport</p>
+        <img id="img" src="assets/YYZ_safety_analysis.png" style="width:100%;">
+      </div>
+      <div style="flex: 0 0 45%;">
+        <p>Safety analysis of the CYYC (Calgary Int.) airport</p>
+        <img id="img" src="assets/YYC_safety_analysis.png" style="width:100%;">
+      </div>
+    </div>
+
+    <h2 id="inspiration">Inspiration</h2>
+    <p>As one of us was flying in a plane with his mentor, they heard a story; a few hours ago, a plane developed ice on their wings right before they landed. Although they landed safely, it was a scary and dangerous experience. We want to prevent these types of experiences from happening by making a site that warns General Aviation pilots of the weather conditions in different regions across airports with METAR.</p>
+
+    <h2 id="what-it-does">What it does</h2>
+    <p>Clear skies is a website that identifies the safety of flying on a route, on a particular date, using Meteorological Terminal Air Report (METAR) data from the METAR-TAF.com API. This website rates the safety of each route into five categories: extremely dangerous, dangerous, risk, safe, and excellent.</p>
+
+    <h2 id="how-we-built-it">How we built it</h2>
+    <p>The website was built using HTML with Flask. The backend was done with Python and Flask. The website was uploaded to GCP Cloud Run, and has the API token hidden with GCP Secrets. We later uploaded the website to a domain.com URL (clear-skies.tech).</p>
+
+    <h2 id="challenges">Challenges we ran into</h2>
+    <p>We ran into numerous challenges throughout the course of the hackathon. The first challenge we encountered was finding what METAR parameters were safe and what parameters weren’t. For example, a wind speed of 30 knots wasn’t safe, whereas a wind speed of 0 knots was perfectly safe according to flight experts. Another challenge we ran into was allowing the website to be viewed on devices with a smaller width, such as smartphones. We implemented a ‘hamburger’ menu to allow the website to be viewed on small devices, without affecting the functionality of the website. Prior to this feature being added, the website would be virtually unusable on small screens. Another big problem was implementing AI. Since it was our first time doing this, we were not entirely sure how we should add it. The last problem we ran into was hiding the key to the METAR API. When we published our code to Github, we would not want for there to be any sensitive information. We hid the API key by using GCP’s Secret tool. Other minor challenges included agreeing on some of the text added on the website.</p>
+
+    <h2 id="accomplishments">Accomplishments that we're proud of</h2>
+    <p>One of the accomplishments we are very proud of is connecting the METAR API to the website so it's accessible to you and us. We are also proud of uploading our website to a domain.com URL, this was the first time any of us have done this. Also, we are proud that we were able to manage our time well and work well as a team to successfully complete this project.</p>
+
+    <h2 id="what-we-learned">What we learned</h2>
+    <p>During the making of this website, we learned how to use Flask and Bootstrap to make websites, and to create pipelines between APIs and websites. We also learned how to upload a website using domain.com. We also learned how to adjust DNS to authenticate our URL. In result, we were able to complete the project in a shorter period of time and add more functions to it.</p>
+
+    <h2 id="whats-next">What's next for Clear Skies</h2>
+    <p>A next step for all of us would be to make the website look more professional and spend some more time on the layout and design of the site itself, as well as implementing the GPT-3.5 AI instead of using the Co:here AI to add more functionality to our website. Not only that, but we would also implement a system to make different units of measurement into the same (to avoid confusion), as an identical looking METAR may mean different things depending on where you’re flying. Finally, we would add keyboard shortcuts to allow users to go from one page to another easier.</p>
+
+    <h2 id="built-with">Built With</h2>
+    <ul>
+        <li>bootsrap</li>
+        <li>domain.com</li>
+        <li>flask</li>
+        <li>gcp-cloud-run</li>
+        <li>gcp-secrets</li>
+        <li>html5</li>
+        <li>metar-taf</li>
+        <li>python</li>
+    </ul>
+    
+    <h2 id="demo-video">Demo Video</h2>
+    <div style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/6LStCJjNwZY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+    <h2>By Mark Danishevsky [2025]</h2>
+    <div style="margin-top: 10px;">
+      <a href="https://www.linkedin.com/in/mark-danishevsky-42844523b/">
+        <img src="../logos/linkedin.png" alt="LinkedIn" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://devpost.com/danishevskym?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">
+        <img src="../logos/devpost.png" alt="Devpost" style="width:30px;height:30px;margin-right:10px;">
+      </a>
+      <a href="https://github.com/MarkDanishevsky">
+        <img src="../logos/github.svg" alt="GitHub" style="width:30px;height:30px;">
+      </a>
+    </div>
+  </div>
+  
+
+</body>
+</html>
