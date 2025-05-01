@@ -30,13 +30,66 @@
 
     <h2>Recursion Navigation</h2>
     <ul>
-      <li><a href="#recursion-intro">Recursion Intro</a></li>
+      <li><a href="#what-is-recursion">What is recursion?</a></li>
+      <li><a href="#recursive-searching">Recursive Searching</a></li>
+      <li><a href="#recursive-sorting">Recursive Sorting</a></li>
     </ul>
   </div>
   <div class="main">
 
-    <h2 id="recursion-intro">Recursion Intro</h2>
+    <h2 id="what-is-recursion">What is recursion?</h2>
+    <p>Recursion is a programming technique where a method calls itself to solve smaller versions of a problem.</p>
+    <p>A recursive method has two essential parts:</p>
+    <ul>
+      <li><b>Base Case:</b> The condition under which the recursion stops.</li>
+      <li><b>Recursive Case:</b> The part where the method calls itself with a simpler or smaller input.</li>
+    </ul>
+    <h3>Example — Factorial (n!)</h3>
+    <div style="text-align: center;">
+      <img id="img" src="screenshots/recursion_factorial.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
     
+    <p>In the code above, factorial(0) returns 1 (base case), and otherwise, the method keeps calling itself with a smaller n.</p>
+    <p>All problems which can be solved with iteration (loops) can be solved with recursion. 
+      <a href="https://stackoverflow.com/questions/1744106/are-all-problems-that-are-solvable-with-recursion-solvable-with-loops">Are all problems that are solvable with recursion solvable with loops? - Stack Overflow</a>
+    </p>
+
+
+
+    <h2 id="recursive-searching">Recursive Searching</h2>
+    <h3>Binary Search (Recursive Version)</h3>
+    <p>Binary Search efficiently finds a target value in a sorted array by repeatedly dividing the search interval in half. Its time complexity is O(log n). It requires that the array is sorted.</p>
+    <p>You can see an example of recursive Binary Search below:</p>
+    <div style="text-align: center;">
+      <img id="img" src="screenshots/recursion_bsearch.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+    <p>A call to binarySearch returns the index of an element with value target in the array arr, between the indices of left and right.</p>
+    <p>The algorithm works in the following manner:</p>
+    <ul>
+      <li>It finds the middle (mid) index between left and right.</li>
+      <li>If the target is at arr[mid], return mid.</li>
+      <li>Otherwise, call binarySearch with indices left to mid - 1 if the target is smaller.</li>
+      <li>The base case is if the left index is greater than the right index. In this case, we return -1.</li>
+    </ul>
+    <p><a href="https://www.geeksforgeeks.org/binary-search/">Binary Search Algorithm – Iterative and Recursive Implementation | GeeksforGeeks</a></p>
+
+
+
+
+
+    <h2 id="recursive-sorting">Recursive Sorting</h2>
+    <p>Below you can see an example of how we can use recursion to sort an array:</p>
+    <div style="text-align: center;">
+      <img id="img" src="screenshots/recursion_mergesort.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+    <p><strong>Merge Sort</strong> is a divide and conquer algorithm:</p>
+    <ul>
+      <li>Split the array into halves.</li>
+      <li>Recursively sort each half.</li>
+      <li>Merge the sorted halves.</li>
+    </ul>
+    <p><a href="https://www.geeksforgeeks.org/merge-sort/">Java Program for Merge Sort | GeeksforGeeks</a></p>
+
 
 
   </div>
