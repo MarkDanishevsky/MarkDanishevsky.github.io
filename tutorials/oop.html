@@ -39,6 +39,8 @@
       <li><a href="#super-keyword">super() keyword</a></li>
       <li><a href="#constructors">Constroctors</a></li>
       <li><a href="#inheritance-code-example">Inheritance Code Example</a></li>
+      <li><a href="#abstract-classes">Abstract Classes</a></li>
+      <li><a href="#interfaces">Interfaces</a></li>
       <li><a href="#mistakes-to-avoid">Mistakes to Avoid</a></li>
 
 
@@ -155,8 +157,12 @@
     <p><b>Extends</b>: The Java keyword used to declare that one class inherits from another.</p>
     <img id="img" src="screenshots/oop_extends_example.png" alt="Diagram of if-else if-else structure" style="max-width: 75%; height: auto; margin-top: 10px;">
     <p>Here, the class ExampleSubClass is a superclass of SuperClass.</p>
-    <p>[W3 Schools] <a href="https://www.w3schools.com/java/java_inheritance.asp">Java Inheritance (Subclass and Superclass)</a></p>
-
+    <p>[W3 Schools] <a href="https://www.w3schools.com/java/java_inheritance.asp">Java Inheritance (Subclass and Superclass)</a>
+    <br>
+    
+    <a href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html">Oracle Java Tutorials - Inheritance</a>
+    </p>
+    
 
 
     <h2 id="inheritance-example">Inheritance Example</h2>
@@ -286,7 +292,59 @@
       </table>
 
 
+    
+    <h2 id="abstract-classes">Abstract Classes</h2>
+    <p>An abstract class provides a partial implementation for its subclasses and cannot be instantiated on its own. Below is a Java example:</p>
+    <div style="text-align: center;">
+      <img id="img" src="screenshots/oop_abstract_example.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+    
+    <p>In this example, Dog inherits from Animal and must implement makeSound(). The method eat() is inherited as-is.</p>
+    
+    <h2 id="interfaces">Interfaces</h2>
 
+    <p>An interface defines a contract that a class agrees to follow. Here's an example in Java:</p>
+    
+    <div style="text-align: center;">
+      <img id="img" src="screenshots/oop_interface_example.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+    <p>Here, Bird implements Flyable and provides an implementation of the fly() method.</p>
+    <p><a href="https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html">Oracle Java Tutorials - Interfaces</a></p>
+  
+    <h3>When to Use What?</h3>
+
+    <table border="1" cellpadding="8" style="border: 1px solid black; border-collapse: collapse; width: 100%;">
+      <tr>
+        <th style="background-color: #6d9eeb;">Feature</th>
+        <th style="background-color: #6d9eeb;">Abstract Class</th>
+        <th style="background-color: #6d9eeb;">Interface</th>
+      </tr>
+      <tr>
+        <td>Can contain method implementations?</td>
+        <td>Yes</td>
+        <td>Only with default or static (Java 8+)</td>
+      </tr>
+      <tr>
+        <td>Can have constructors?</td>
+        <td>Yes</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Can extend multiple?</td>
+        <td>No (single inheritance only)</td>
+        <td>Yes (a class can implement multiple interfaces)</td>
+      </tr>
+      <tr>
+        <td>Can contain variables?</td>
+        <td>Yes (instance variables)</td>
+        <td>Yes (constants only)</td>
+      </tr>
+    </table>
+
+    <ul>
+      <li>Use an <strong>abstract class</strong> when you have a base class with shared code.</li>
+      <li>Use an <strong>interface</strong> when you want to enforce a contract across unrelated classes.</li>
+    </ul>
 
     <h2 id="mistakes-to-avoid">Mistakes to Avoid</h2>
     <p><b>Forgetting you can only call methods found or inherited by the reference type</b><br>
