@@ -37,6 +37,7 @@
             <li><a href="#accessing-array-elements">Accessing Array Elements</a></li>
             <li><a href="#looping-through-array">Looping through an Array</a></li>
             <li><a href="#things-to-be-aware-of">Things to be aware of when using arrays</a></li>
+            <li><a href="#arrays-assignment">Arrays Assignment</a></li>
             </ul>
         </li>
         <li><a href="#java-arraylists">Java ArrayLists</a>
@@ -97,6 +98,36 @@
     <p>Trying to resize an array: this is impossible with arrays, but it is impossible with ArrayLists (next topic).</p>
 
     <p>Mixing up data types: an array can contain only one type of variables, so assigning a String value to an array of int's is impossible.</p>
+
+
+    <h3 id="arrays-assignment">Arrays Unit Assignment</h3>
+    <p>I worked with Joseph Wang to create an aircraft ranking tool, which ranks aircraft on several characteristics. This assignment was meant to learn about how to use arrays and find the maximal value in them. The aircraft and their various characteristics were stored in several parallel arrays, with each index corresponding to a plane. You can see the scheme below:<br></p>
+    <div style="text-align: center;">
+      <img id="img" src="screenshots/arrays_assignment_parallel.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <p>Our logic for finding the best aircraft was as follows:<br>
+    <ol>
+
+      <li>Initialize variables bestIndex and bestScore which will contain the values of the best aircraft once the looping is done.</li>
+      <li>We loop through the array:
+        <ol>
+          <li>Determine the score of an aircraft at that particular index through an elaborate formula we created.</li>
+          <li>If the index corresponds to an aircraft that is better (one that has a higher score) than the current best one stored in bestScore, we replace the two variables with this aircraft.</li>
+        </ol>
+      </li>
+      <li>At the end of iteration, we have obtained the best aircraft.</li>
+    </ol>
+  
+    <p>You can see what that looks like in code here:<br></p>
+    <div style="text-align: center;">
+      <img id="img" src="screenshots/arrays_assignment_finding_best_code.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
+
+    <p>You can see what a sample run of our program would ouput:</p>
+    <div style="text-align: center;">
+      <img id="img" src="screenshots/arrays_assignment_output.png" style="max-width: 75%; height: auto; margin-top: 10px;">
+    </div>
 
     <h2 id="java-arraylists">Java ArrayLists</h2>
     <p>An ArrayList is like an array, but it can grow or shrink as needed. It belongs to the java.util package.</p>
